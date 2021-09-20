@@ -1,11 +1,8 @@
 from request import req
 from get_greate import great_img
 
-def a():
-    r = req()
-    #c = great_img(r[0],r[1])
-    return r
+r = req()
+print(r[0]) 
+print(r[1])
 
-b = a()
-print(b[0])
-print(b[1])
+c = great_img(r[0],r[1])

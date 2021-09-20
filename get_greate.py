@@ -50,7 +50,7 @@ def great_img(word,add_word):
             url = candidate.get_attribute('src')
             alt_ = candidate.get_attribute('alt')
             if url and 'https' in url:
-                print(url)
+                #print(url)
                 image_urls.append(url)
                 elem_alt.append(alt_)
                 
@@ -59,7 +59,7 @@ def great_img(word,add_word):
     wd.quit()
     url_list = list(image_urls)
     alt_list = list(elem_alt)
-    print(alt_list[0])
+    # print(alt_list[0])
     a = (url_list[0],alt_list[0])
     return  a
 

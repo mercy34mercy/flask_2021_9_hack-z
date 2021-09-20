@@ -13,11 +13,8 @@ def index():
 def indexs():
     r = req()
     c = great_img(r[0],r[1])
-
-
-
-
-    return c
+    k = c[0]
+    return k
 
     
 

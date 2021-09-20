@@ -12,8 +12,9 @@ def req():
 
     top_key =json_dict["top_key"]
     get_key = json_dict["get_key"]
-    print(top_key)
-    print(get_key)
+    # print(top_key)
+    # print(get_key)
     a = (top_key,get_key)
+    #print(a)
 
-    return a                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+    return a                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
