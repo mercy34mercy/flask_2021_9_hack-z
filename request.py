@@ -1,6 +1,8 @@
 import requests
 import json
 
+from requests.api import get
+
 
 def req():
     json_t = requests.get("https://prettygirl.azurewebsites.net/url")
@@ -9,7 +11,8 @@ def req():
     print(json_t.text)
     json_dict = json.loads(json_t.text)
 
-    print(json_dict["top_key"])
-    
+    top_key =json_dict["top_key"]
+    get_key = json_dict["get_key"]
+    a = (top_key,get_key)
 
-req()
+    return a                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                

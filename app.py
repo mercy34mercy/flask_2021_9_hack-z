@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 from flask import Flask
+from request import req
+from get_greate import great_img
 
 app = Flask(__name__)
 
@@ -7,9 +9,13 @@ app = Flask(__name__)
 def index():
     return 'hello, world'
 
-@app.route('/hello')
+@app.route('/koi')
 def indexs():
-    return 'hello'
+    r = req()
+    c = great_img(r[0],r[1])
+    return c
+
+    
 
 
 
