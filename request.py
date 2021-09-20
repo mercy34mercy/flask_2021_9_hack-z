@@ -4,8 +4,8 @@ import json
 from requests.api import get
 
 
-def req():
-    json_t = requests.get("https://prettygirl.azurewebsites.net/url")
+def req(qua,num):
+    json_t = requests.post("https://prettygirl.azurewebsites.net/url/post",{"quali":qua,"num":num})
 
     #json = json
     json_dict = json.loads(json_t.text)

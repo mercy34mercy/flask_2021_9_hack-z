@@ -10,9 +10,15 @@ app = Flask(__name__)
 def index():
     return 'hello, world'
 
-@app.route('/url')
+@app.route('/url',methods=['POST'])
 def indexs():
-    r = req()
+    try:
+        if request.method == 'GET':
+            top_key = request.json['quali']
+            num = request.json["num"]
+    except:
+        return "EOF"
+    r = req(top_key,num)
     c = great_img(r[0],r[1])
     return jsonify({
     "data":[
