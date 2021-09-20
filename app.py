@@ -9,7 +9,7 @@ app = Flask(__name__)
 def index():
     return 'hello, world'
 
-@app.route('/koi')
+@app.route('/url')
 def indexs():
     r = req()
     c = great_img(r[0],r[1])

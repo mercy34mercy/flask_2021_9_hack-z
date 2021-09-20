@@ -26,7 +26,9 @@ def great_img(word,add_word):
     thumbnail_results = wd.find_elements_by_css_selector("img.rg_i")
 
     # サムネイルをクリックして、各画像URLを取得
-    image_urls = set()
+    image_urls = []
+    elem_url=[]
+    elem_alt= []
     for img in thumbnail_results[:download_num]:
         try:
             img.click()
@@ -38,13 +40,10 @@ def great_img(word,add_word):
         url_candidates = wd.find_elements_by_class_name('n3VNCb')
         
         #検索結果の各リンクをelem_urlに各々リスト型として保存して各々のリンクを1行ずつprintで表示
-        elem_url=[]
-        elem_alt= []
-        elems = wd.find_elements_by_tag_name("a")
-        for elem in elems:
-            elem_url.append(elem.get_attribute("href"))
-           
-            print(elem_url)
+
+        # elems = wd.find_elements_by_tag_name("a")
+        # for elem in elems:
+        #     elem_url.append(elem.get_attribute("href"))
 
 
         for candidate in url_candidates:
@@ -52,13 +51,16 @@ def great_img(word,add_word):
             alt_ = candidate.get_attribute('alt')
             if url and 'https' in url:
                 print(url)
-                image_urls.add(url)
+                image_urls.append(url)
                 elem_alt.append(alt_)
                 
     # 少し待たないと正常終了しなかったので3秒追加
     time.sleep(sleep_between_interactions+3)
     wd.quit()
     url_list = list(image_urls)
-    print(url_list[0])
-    a = (url_list[0],elem_alt[0],elem_url[0])
+    alt_list = list(elem_alt)
+    print(alt_list[0])
+    a = (url_list[0],alt_list[0])
     return  a
+
+#great_img("美女","さん")
