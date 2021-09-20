@@ -10,9 +10,7 @@ def index():
 @app.route('/hello')
 def indexs():
     return 'hello'
-@app.route('/hello')
-def indexs():
-    return 'hello'
+
 
 
 
