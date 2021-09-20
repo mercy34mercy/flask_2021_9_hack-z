@@ -60,7 +60,7 @@ def great_img(word,add_word):
     url_list = list(image_urls)
     alt_list = list(elem_alt)
     # print(alt_list[0])
-    a = (url_list[0],alt_list[0])
+    a = (url_list[0],alt_list[0],url_list[1],alt_list[1],url_list[2],alt_list[2])
     return  a
 
 #great_img("美女","さん")
