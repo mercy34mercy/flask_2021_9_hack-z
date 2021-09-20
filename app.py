@@ -13,7 +13,7 @@ def index():
 @app.route('/url',methods=['POST'])
 def indexs():
     try:
-        if request.method == 'GET':
+        if request.method == 'POST':
             top_key = request.json['quali']
             num = request.json["num"]
     except:
