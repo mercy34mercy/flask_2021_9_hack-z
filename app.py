@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from flask import Flask
+import requests
 from request import req
 from get_greate import great_img
 from flask import *
@@ -10,12 +11,15 @@ app = Flask(__name__)
 def index():
     return 'hello, world'
 
-@app.route('/url',methods=['POST'])
+@app.route('/url',methods=['POST','GET'])
 def indexs():
     try:
         if request.method == 'POST':
             top_key = request.json['quali']
             num = request.json["num"]
+        elif request.method == 'GET':
+            top_key = "美女"
+            num = 3
     except:
         return "EOF"
     r = req(top_key,num)
