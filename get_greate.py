@@ -40,7 +40,7 @@ def great_img(word,add_word):
         #検索結果の各リンクをelem_urlに各々リスト型として保存して各々のリンクを1行ずつprintで表示
         elem_url=[]
         elem_alt= []
-        elems = wd.find_element_by_class_name('thread-list').find_elements_by_tag_name("a")
+        elems = wd.find_elements_by_tag_name("a")
         for elem in elems:
             elem_url.append(elem.get_attribute("href"))
            
