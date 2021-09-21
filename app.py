@@ -21,7 +21,7 @@ def indexs():
             num = request.json["num"]
         elif request.method == 'GET':
             top_key = "美女"
-            num = 9
+            num = 3
     except:
         return "EOF"
     r = req(top_key,num)
