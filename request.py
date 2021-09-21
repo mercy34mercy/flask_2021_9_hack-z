@@ -5,7 +5,7 @@ from requests.api import get
 
 
 def req(qua,num):
-    json_t = requests.post("http://beautifulsoup.azurewebsites.net/post",{"quali":qua,"num":num})
+    json_t = requests.post("https://get-keys.herokuapp.com/url/post",{"quali":qua,"num":num})
 
     #json = json
     json_dict = json.loads(json_t.text)
