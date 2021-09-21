@@ -17,15 +17,13 @@ def index():
 def indexs():
     top_key = "美女"
     num = 9
-    try:
-        if request.method == 'POST':
-            top_key = request.json['query'] 
-            num = request.json["num"]
-        elif request.method == 'GET':
-            top_key = "美女"
-            num = 3
-    except:
-        return "メソッドが指定されていません"
+    
+    if request.method == 'POST':
+        top_key = request.json['query'] 
+        num = request.json["num"]
+    elif request.method == 'GET':
+        top_key = "美女"
+        num = 3
     r = req(top_key,num)
     c,d = great_img(r[0],r[1],num)
 
