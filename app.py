@@ -13,6 +13,8 @@ def index():
 
 @app.route('/url',methods=['POST','GET'])
 def indexs():
+    top_key = "美女"
+    num = 3
     try:
         if request.method == 'POST':
             top_key = request.json['quali']
