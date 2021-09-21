@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from flask import Flask
-import requests
+
+from flask import request
 from request import req
 from get_greate import great_img
 from flask import *
@@ -13,7 +14,7 @@ CORS(app)
 
 @app.route('/',methods=['POST','GET'])
 def index():
-    print("リクエスト:" , request)
+    print("リクエスト:" , request.json)
     if request.method == 'POST':
         top_key = request.json['query'] 
         num = request.json["num"]
