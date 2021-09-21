@@ -9,8 +9,17 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-@app.route('/')
+@app.route('/',methods=['POST','GET'])
 def index():
+    if request.method == 'POST':
+        top_key = request.json['query'] 
+        num = request.json["num"]
+    elif request.method == 'GET':
+        top_key = "GETです"
+        num = 0
+    
+    print(top_key)
+    print(num)
     return 'hello, world'
 
 @app.route('/url',methods=['POST','GET'])
