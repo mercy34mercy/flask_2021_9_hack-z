@@ -25,7 +25,7 @@ def indexs():
             top_key = "美女"
             num = 3
     except:
-        return "EOF"
+        return "メソッドが指定されていません"
     r = req(top_key,num)
     c,d = great_img(r[0],r[1],num)
 
