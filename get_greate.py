@@ -7,11 +7,11 @@ import hashlib
 import chromedriver_binary
 
 
-def great_img(word,add_word):
+def great_img(word,add_word,img_num):
     # クリックなど動作後に待つ時間(秒)
     sleep_between_interactions = 2
     # ダウンロードする枚数
-    download_num = 3
+    download_num = img_num
 
 
     # 検索ワード
@@ -60,7 +60,13 @@ def great_img(word,add_word):
     url_list = list(image_urls)
     alt_list = list(elem_alt)
     # print(alt_list[0])
-    a = (url_list[0],alt_list[0],url_list[1],alt_list[1],url_list[2],alt_list[2])
-    return  a
+
+    a = []
+
+    for i in range(len(url_list)):
+        a.append(url_list[i])
+        a.append(alt_list[i])
+
+    return  url_list,alt_list
 
 #great_img("美女","さん")

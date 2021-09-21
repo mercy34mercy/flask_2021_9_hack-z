@@ -14,34 +14,38 @@ def index():
 @app.route('/url',methods=['POST','GET'])
 def indexs():
     top_key = "美女"
-    num = 3
+    num = 9
     try:
         if request.method == 'POST':
-            top_key = request.json['quali']
+            top_key = request.json['query'] 
             num = request.json["num"]
         elif request.method == 'GET':
             top_key = "美女"
-            num = 3
+            num = 9
     except:
         return "EOF"
     r = req(top_key,num)
-    c = great_img(r[0],r[1])
-    return jsonify({
-    "data":[
-        {
-            "url":c[0],
-            "alt":c[1]
-        },
-        {
-            "url":c[2],
-            "alt":c[3]
-        },
-        {
-            "url":c[4],
-            "alt":c[5]
+    c,d = great_img(r[0],r[1],num)
+
+    
+
+    
+    jsonify = ({
+        "data":[]
+    })
+
+    for i in range(len(c)):
+        print(c[i])
+        add_data={
+            "url":c[i],
+            "alt":d[i]
         }
-    ]
-})
+        jsonify["data"].append(add_data)
+
+    print(jsonify)
+    
+    
+    return jsonify
 
     
 
