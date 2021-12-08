@@ -59,55 +59,55 @@ def indexs():
     return jsonify
 
 
-@app.route('/ikei',methods=['POST','GET'])
-def indexs():
-    top_key = "美女"
-    num = 3
+# @app.route('/ikei',methods=['POST','GET'])
+# def indexs():
+#     top_key = "美女"
+#     num = 3
     
-    if request.method == 'POST':
-        top_key = request.json['query'] 
-        num = request.json["num"]
+#     if request.method == 'POST':
+#         top_key = request.json['query'] 
+#         num = request.json["num"]
 
-    elif request.method == 'GET':
-        top_key = "美女"
-        num = 3
+#     elif request.method == 'GET':
+#         top_key = "美女"
+#         num = 3
 
-    excutor = ThreadPoolExecutor(max_workers=3) 
-    futures = []
-    futures2 = []
-    r = req(top_key,num)
+    # excutor = ThreadPoolExecutor(max_workers=3) 
+    # futures = []
+    # futures2 = []
+    # r = req(top_key,num)
 
-    for i in range(3):
-        future,future2 = excutor.submit(great_img,r[0],r[1],num)
-        futures.append(future)
-        futures2.append(future2)
+    # for i in range(3):
+    #     future,future2 = excutor.submit(great_img,r[0],r[1],num)
+    #     futures.append(future)
+    #     futures2.append(future2)
 
-    c = []
-    d = []
+    # c = []
+    # d = []
 
-    for i in futures:
-        c.append(futures[i].result())
-        d.append(futures2[i].result())
-
-    
+    # for i in futures:
+    #     c.append(futures[i].result())
+    #     d.append(futures2[i].result())
 
     
-    jsonify = ({
-        "data":[]
-    })
 
-    for i in range(len(c)):
-        print(c[i])
-        add_data={
-            "url":c[i],
-            "alt":d[i]
-        }
-        jsonify["data"].append(add_data)
+    
+    # jsonify = ({
+    #     "data":[]
+    # })
 
-    print(jsonify)
+    # for i in range(len(c)):
+    #     print(c[i])
+    #     add_data={
+    #         "url":c[i],
+    #         "alt":d[i]
+    #     }
+    #     jsonify["data"].append(add_data)
+
+    # print(jsonify)
     
     
-    return jsonify
+    # return jsonify
 
     
 
