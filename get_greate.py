@@ -15,7 +15,7 @@ def great_img(word,add_word,img_num):
 
 
     # 検索ワード
-    query = word + " " + add_word
+    query = add_word
     # 画像検索用のurl
     search_url = "https://www.google.com/search?safe=off&site=&tbm=isch&source=hp&q={q}&oq={q}&gs_l=img"
 
